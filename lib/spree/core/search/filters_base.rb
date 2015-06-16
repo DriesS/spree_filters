@@ -57,6 +57,7 @@ module Spree
         end
 
         def add_search_scopes(base_scope)
+          base_scope = base_scope.reorder('').order('spree_products.position')
           search.each do |name, scope_attribute|
             scope_name = name.to_sym
             if base_scope.respond_to?(:search_scopes) && base_scope.search_scopes.include?(scope_name.to_sym)
