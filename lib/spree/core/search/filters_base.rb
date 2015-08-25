@@ -43,7 +43,6 @@ module Spree
           base_scope = get_products_conditions_for(base_scope, keywords)
           base_scope = add_search_scopes(base_scope)
           base_scope = add_sort_scope(base_scope)
-          debugger
           base_scope
         end
 
