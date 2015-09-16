@@ -80,7 +80,8 @@ module Spree
                 base_scope = base_scope.reorder('').descend_by_popularity
             end
           else
-            base_scope = base_scope.reorder('').order("spree_products.position ASC")
+            base_scope = base_scope.joins(:classifications).where("spree_products_taxons.taxon_id"=>@properties[:taxon].id).order("spree_products_taxons.position") if @properties[:taxon]
+            #base_scope = base_scope.reorder('').order("spree_products.position ASC")
           end
 
           base_scope
