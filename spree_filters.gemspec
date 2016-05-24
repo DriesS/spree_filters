@@ -3,9 +3,10 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_filters'
   s.version     = '2.1.1'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.summary     = 'Add filters to spree'
+  s.description = 'Plugin to adapt filters in spree and make them more custom'
   s.required_ruby_version = '>= 1.9.3'
+  s.author      = 'Dries Steenhouwer'
 
   # s.author    = 'You'
   # s.email     = 'you@example.com'
