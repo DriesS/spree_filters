@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Add filters to spree'
   s.description = 'Plugin to adapt filters in spree and make them more custom'
   s.required_ruby_version = '>= 1.9.3'
-  s.author      = 'Dries Steenhouwer'
+  s.authors      = 'Dries Steenhouwer'
 
   # s.author    = 'You'
   # s.email     = 'you@example.com'
