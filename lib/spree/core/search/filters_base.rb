@@ -75,6 +75,8 @@ module Spree
             case sort
               when 'price'
                 base_scope = base_scope.reorder('').order("spree_prices.amount #{sort_direction}")
+              when 'name'
+                base_scope = base_scope.reorder('').order("spree_products.name #{sort_direction}")
               when 'popularity'
                 base_scope = base_scope.reorder('').descend_by_popularity
             end
