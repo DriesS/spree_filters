@@ -62,7 +62,7 @@ module Spree
             if base_scope.respond_to?(:search_scopes) && base_scope.search_scopes.include?(scope_name.to_sym)
               base_scope = base_scope.send(scope_name, *scope_attribute)
             else
-              base_scope = base_scope.merge(Spree::Product.search({scope_name => scope_attribute}).result)
+              base_scope = base_scope.merge(Spree::Product.ransack({scope_name => scope_attribute}).result)
             end
           end if search
           base_scope
@@ -91,8 +91,9 @@ module Spree
           # method should return new scope based on base_scope
           def get_products_conditions_for(base_scope, query)
             unless query.blank?
-              base_scope = base_scope.like_any([:name, :description], query.split)
+              base_scope = base_scope.like_any([:name, :description], [query])
             end
+            # debugger
             base_scope
           end
 
